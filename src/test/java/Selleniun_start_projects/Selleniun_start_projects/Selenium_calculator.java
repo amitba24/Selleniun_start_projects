@@ -18,7 +18,7 @@ public class Selenium_calculator {
 	 @Before
 	  public void setup() {
 		 
-			  System.setProperty("webdriver.gecko.driver","C:\\geckodriver-v0.34.0-win32\\geckodriver.exe");
+			  String setProperty = System.setProperty("webdriver.gecko.driver","C:\\geckodriver-v0.34.0-win32\\geckodriver.exe");
 		      browser = new FirefoxDriver();
 		  	  browser.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
 			  String url="https://testpages.eviltester.com/styled/apps/calculator.html";
@@ -48,4 +48,5 @@ public class Selenium_calculator {
 				assertEquals(Expected,result);
 				
 				
-}}
+}
+	 }
