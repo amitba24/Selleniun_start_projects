@@ -32,44 +32,18 @@ package Selleniun_start_projects.Selleniun_start_projects;
 			
 		  }
 		   @Test
-		    public void testPasswordValidation() {
-		        // טבלת מקרי הבדיקה
-		        Object[][] testCases = {
-		            {"Password is valid", "Abc123*", "#1"},
-		            {"Password is invalid", "Ab1!@", "#2"},
-		            {"Password is invalid", "abc123*", "#3"},
-		            {"Password is invalid", "ABC123*", "#4"},
-		            {"Password is valid", "Abc123*", "#5"},
-		            {"Password is valid", "123*abc", "#6"},
-		            {"Password is invalid", "Password123!", "#7"},
-		            {"Password is invalid", "Abc@123", "#8"},
-		            {"Password is valid", "A12345*", "#9"},
-		            {"Password is invalid", "abc$123", "#10"}
-		        };
 
-		        for (Object[] testCase : testCases) {
-		            String expectedResult = (String) testCase[0];
-		            String password = (String) testCase[1];
-		            String testCaseId = (String) testCase[2];
+	
+		  public void Tests1() {
+		   
+		   browser.findElement(By.name("characters")).sendKeys("chaya34");
 
-		            // שליחת הסיסמה לשדה המתאים באתר
-		            WebElement passwordField = browser.findElement(By.id("password"));
-		            passwordField.clear();
-		            passwordField.sendKeys(password);
+		   browser.findElement(By.name("validate")).click();
+		   String result= browser.findElement(By.name("validation_message")).toString();
+		   String  Expected="Valid Value";
+		   assertEquals(Expected,result);
+		   
 
-		            // לחיצה על כפתור בדיקת הסיסמה
-		            browser.findElement(By.id("submitbutton")).click();
-
-		            // קבלת התוצאה שהתקבלה על הסיסמה
-		            WebElement resultElement = browser.findElement(By.id("password-result"));
-		            String actualResult = resultElement.getText();
-
-		            // השוואת התוצאה הצפויה לתוצאה שהתקבלה בפועל
-		            assertEquals(expectedResult, actualResult, "Test " + testCaseId + " failed.");
-		        }
-		    }
-
-		 
 			
+		   }}
 
-}
