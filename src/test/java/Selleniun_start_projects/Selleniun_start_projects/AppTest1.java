@@ -36,7 +36,7 @@ package Selleniun_start_projects.Selleniun_start_projects;
 	
 		  public void Tests1() {
 		   
-		   browser.findElement(By.name("characters")).sendKeys("chaya34");
+		   browser.findElement(By.name("characters")).sendKeys("Abc123*");
 
 		   browser.findElement(By.name("validate")).click();
 		   String result= browser.findElement(By.name("validation_message")).toString();
@@ -45,5 +45,18 @@ package Selleniun_start_projects.Selleniun_start_projects;
 		   
 
 			
-		   }}
+		   }
+		   @Test
+			  public void Tests2() {
+				   
+				   browser.findElement(By.name("characters")).sendKeys("Ab1!@");
+
+				   browser.findElement(By.name("validate")).click();
+				   String result= browser.findElement(By.name("validation_message")).toString();
+				   String  Expected="Invalid Value";
+				   assertEquals(Expected,result);
+				   
+
+					
+				   }}
 
